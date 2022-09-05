@@ -95,52 +95,52 @@
 
 
 
-const likes=[{title:'like one', body:'this is a like one',createAt: new Date().getTime()},
-            {title:'like two', body:'this is a like two',createAt: new Date().getTime()}
-      ];
+// const likes=[{title:'like one', body:'this is a like one',createAt: new Date().getTime()},
+//             {title:'like two', body:'this is a like two',createAt: new Date().getTime()}
+//       ];
  
-      let intervalid=0;
-      function getlikes()
-      {
-        clearInterval(intervalid)
-       intervalid =setInterval(()=>
-       {
-      setTimeout(()=>{
-        let output='';
-      likes.forEach((cute,index)=>{
-      output+=`<li> ${cute.title} - lasted time${(new Date().getTime()-cute.createAt)/1000}</li>`;
-      });
-      console.log('Interval='+ intervalid);
-      document.body.innerHTML=output;
-      },1000),1000})
-      }
+//       let intervalid=0;
+//       function getlikes()
+//       {
+//         clearInterval(intervalid)
+//        intervalid =setInterval(()=>
+//        {
+//       setTimeout(()=>{
+//         let output='';
+//       likes.forEach((cute,index)=>{
+//       output+=`<li> ${cute.title} - lasted time${(new Date().getTime()-cute.createAt)/1000}</li>`;
+//       });
+//       console.log('Interval='+ intervalid);
+//       document.body.innerHTML=output;
+//       },1000),1000})
+//       }
      
 
 
-      function createlike(cute,callback)
-      {
-        setTimeout(()=>{
-           likes.push({...cute,createAt:new Date().getTime()})
-           callback();
-        },1000)
-      }
+//       function createlike(cute,callback)
+//       {
+//         setTimeout(()=>{
+//            likes.push({...cute,createAt:new Date().getTime()})
+//            callback();
+//         },1000)
+//       }
 
-      function createlike1(cute,callback)                                  
-      {
-        setTimeout(()=> {
-           likes.push({...cute,createAt:new Date().getTime()})
-           callback();
-        },1000)
-      }
+//       function createlike1(cute,callback)                                  
+//       {
+//         setTimeout(()=> {
+//            likes.push({...cute,createAt:new Date().getTime()})
+//            callback();
+//         },1000)
+//       }
       
-      function createlike1(cute,callback)
-       {
-         setTimeout(()=>{
-           likes.push({...cute,createAt:new Date().getTime()});
-           callback();
-         },3000);
-       }
+//       function createlike1(cute,callback)
+//        {
+//          setTimeout(()=>{
+//            likes.push({...cute,createAt:new Date().getTime()});
+//            callback();
+//          },3000);
+//        }
       
-      getlikes();
-      createlike({title:'3like',body:'this is 3 like'},getlikes)
-      createlike1({title:'4like',body:'this is 4 like'},getlikes)
+//       getlikes();
+//       createlike({title:'3like',body:'this is 3 like'},getlikes)
+//       createlike1({title:'4like',body:'this is 4 like'},getlikes)
