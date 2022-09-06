@@ -10,14 +10,14 @@
 // }
 
 // function createedit(post)
-// {
-//     return new Promise((resolve,reject)=>{
-//         posts.push(post);
+// {h(post);
 //         const error=false;
 //         if(!error)
 //         {
 //             resolve()
 //         }
+//     return new Promise((resolve,reject)=>{
+//         posts.pus
 //         else{
 //             reject('Something wants wrong')
 //         }

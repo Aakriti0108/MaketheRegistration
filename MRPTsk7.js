@@ -93,7 +93,10 @@
 // party().then((m)=>{
 //     console.log(`${m}`)
 // })
- // async promise.all
+
+
+ // async promise.all1
+ 
 //  const party = async()=>{
 
 //     const bringticket=new Promise((resolve,reject)=>{
@@ -134,68 +137,68 @@
 // .catch(err=>console.log(err))
 
 // create and delete
-const posts=[
-    {title:'Post One', body:'This is post one'},
-    {title:'Post Two', body:'This is post two'}
-];
+// const posts=[
+//     {title:'Post One', body:'This is post one'},
+//     {title:'Post Two', body:'This is post two'}
+// ];
 
-function getPosts(){
+// function getPosts(){
   
-    setTimeout(()=>{
-        let output='';
-        posts.forEach((post)=>{
-            curDate=new Date();
-            output+=`<li>${post.title} </li>`;
-        });
-        document.body.innerHTML=output;
+//     setTimeout(()=>{
+//         let output='';
+//         posts.forEach((post)=>{
+//             curDate=new Date();
+//             output+=`<li>${post.title} </li>`;
+//         });
+//         document.body.innerHTML=output;
         
-        },1000);};
+//         },1000);};
 
 
 
-function createPost(post){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            posts.push(post);
+// function createPost(post){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             posts.push(post);
 
-            const error =false;
-            if(!error){
-                resolve();
-            }
-            else{
-                reject('Error: Somthing went wrong')
-            }
-        },2000)
-    });
-}
-function deletePost(){
-    return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-        if(posts.length!=0){
-            resolve(posts.pop());
-            getPosts();  
-        }
-        else{
-            reject('Error: Array is empty now')
-        }
-        },1000);
-    });
-}
+//             const error =false;
+//             if(!error){
+//                 resolve();
+//             }
+//             else{
+//                 reject('Error: Somthing went wrong')
+//             }
+//         },2000)
+//     });
+// }
+// function deletePost(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//         if(posts.length!=0){
+//             resolve(posts.pop());
+//             getPosts();  
+//         }
+//         else{
+//             reject('Error: Array is empty now')
+//         }
+//         },1000);
+//     });
+// }
 
-async function printPost(){
-    await createPost({title:'Post Three',body:'This is third post'});
-    await getPosts();
-    await deletePost();
-    await deletePost(); 
-    await deletePost();
-    try{
-        await deletePost();
-    }
-    catch(err){
-        console.log(err)
-        await createPost({title:'Post Four',body:'This is Fourth post'});
-        await getPosts();
-        await deletePost();
-    }
-}
-printPost();
+// async function printPost(){
+//     await createPost({title:'Post Three',body:'This is third post'});
+//     await getPosts();
+//     await deletePost();
+//     await deletePost(); 
+//     await deletePost();
+//     try{
+//         await deletePost();
+//     }
+//     catch(err){
+//         console.log(err)
+//         await createPost({title:'Post Four',body:'This is Fourth post'});
+//         await getPosts();
+//         await deletePost();
+//     }
+// }
+// printPost();
