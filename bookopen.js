@@ -60,9 +60,9 @@ function showuseronscreeen(user){
     }
 
     const parentNode = document.getElementById('userlist');
-    const childHTML = `<li id=${user.email}> ${user.Name} - ${user.email}
-                            <button onclick=deleteUser('${user.email}')> Delete User </button>
-                            <button onclick=editUser('${user.email}','${user.Name}','${user.phonenumber}')>Edit User </button>
+    const childHTML = `<li id=${user._id}> ${user.Name} - ${user.email}
+                            <button onclick=deleteUser('${user._id}')> Delete User </button>
+                            <button onclick=editUser('${user._id}','${user.Name}','${user.phonenumber}')>Edit User </button>
                          </li>`
 
     parentNode.innerHTML = parentNode.innerHTML + childHTML;
@@ -78,8 +78,15 @@ function editUser(emailId)
     deleteUser(emailId);
 }
 function deleteUser(emailId){
-    localStorage.removeItem(emailId);
-    removeUserFromScreen(emailId);
+    // localStorage.removeItem(emailId);
+    axios.delete(`https://crudcrud.com/api/abc858a1633d46beae98004b07b05ed2/AppointmentApp/${emailId}`)
+    .then((response)=>{
+        console.log(response)
+        removeUserFromScreen(emailId);
+    })
+    .catch((err)=>{
+        console.log(err)})
+    
 
 }
 
